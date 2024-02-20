@@ -59,7 +59,7 @@ int main (int argc, char *argv[])
 
 	// AFTER THE FUNCTION GETS CALLED
 
-	rra(stack_a);
+	update_index(stack_a);
 
 
 	t_list *after_a = *stack_a;
@@ -68,7 +68,7 @@ int main (int argc, char *argv[])
 	printf("\nafter a: ");
 	while (after_a)
 	{
-		printf("%d ", after_a -> content);
+		printf("%d ", after_a -> index);
 		after_a = after_a -> next;
 	}
 

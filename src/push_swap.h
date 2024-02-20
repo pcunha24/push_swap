@@ -34,6 +34,7 @@ void	reverse_rotate(t_list	**stack);
 void	rra(t_list	**stack_a);
 void	rrb(t_list	**stack_b);
 void	rrr(t_list	**stack_a, t_list	**stack_b);
+void	update_index(t_list	**stack);
 
 
 #endif
