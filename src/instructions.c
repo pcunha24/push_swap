@@ -34,7 +34,7 @@ void	ss(t_list **stack_a, t_list **stack_b)
 
 void	push_elements(t_list **stack_push, t_list **stack_pull)
 {
-	t_list *temp_push;
+	t_list	*temp_push;
 	t_list	*temp_pull;
 
 	if (!*stack_pull)
@@ -56,4 +56,86 @@ void	pb(t_list **stack_a, t_list **stack_b)
 {
 	push_elements(stack_b, stack_a);
 	write(1, "pb\n", 3);
+}
+
+void	rotate(t_list	**stack)
+{
+	t_list	*tmp;
+	t_list	*last;
+
+	if (*stack == NULL || (*stack) -> next == NULL)
+	{
+		return ;
+	}
+	tmp = *stack;
+	last = NULL;
+	while (tmp -> next != NULL)
+	{
+		tmp = tmp -> next;
+		last = tmp;
+	}
+	last -> next = *stack;
+	*stack = (*stack) -> next;
+	last -> next -> next = NULL;
+
+}
+
+void	ra(t_list	**stack_a)
+{
+	rotate(stack_a);
+	write(1, "ra\n", 3);
+}
+
+void	rb(t_list	**stack_b)
+{
+	rotate(stack_b);
+	write(1, "rb\n", 3);
+}
+
+void	rr(t_list	**stack_a, t_list	**stack_b)
+{
+	rotate(stack_a);
+	rotate(stack_b);
+	write(1, "rr\n", 3);
+}
+
+void	reverse_rotate(t_list	**stack)
+{
+	t_list	*temp;
+	t_list	*first;
+	t_list	*last;
+
+	if (*stack == NULL || (*stack) -> next == NULL)
+	{
+		return ;
+	}
+	temp = *stack;
+	first = *stack;
+	while (temp -> next -> next != NULL)
+	{
+		temp = temp -> next;
+	}
+	last = temp -> next;
+	*stack = last;
+	(*stack) -> next = first;
+	temp -> next = NULL;
+}
+
+void	rra(t_list	**stack_a)
+{
+	reverse_rotate(stack_a);
+	write(1, "rra\n", 4);
+}
+
+void	rrb(t_list	**stack_b)
+{
+	reverse_rotate(stack_b);
+	write(1, "rrb\n", 4);
+}
+
+void	rrr(t_list	**stack_a, t_list	**stack_b)
+{
+	reverse_rotate(stack_a);
+	reverse_rotate(stack_b);
+	write(1, "rrr\n", 4);
 }

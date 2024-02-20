@@ -59,7 +59,7 @@ int main (int argc, char *argv[])
 
 	// AFTER THE FUNCTION GETS CALLED
 
-	pb(stack_a, stack_b);
+	rra(stack_a);
 
 
 	t_list *after_a = *stack_a;
