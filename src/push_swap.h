@@ -13,7 +13,7 @@ typedef struct	push_swap
 	struct push_swap	*next;
 }						t_list;
 
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_atoi(const char *str);
 char	**ft_split(char const *s, char c);
@@ -34,7 +34,10 @@ void	reverse_rotate(t_list	**stack);
 void	rra(t_list	**stack_a);
 void	rrb(t_list	**stack_b);
 void	rrr(t_list	**stack_a, t_list	**stack_b);
-void	update_index(t_list	**stack);
+void	insert_index(t_list	**stack, int size);
+int		is_sorted(t_list **stack);
+void	mini_sort(t_list **stack);
+void	radix_sort(t_list **stack_a, t_list **stack_b, int size);
 
 
 #endif
