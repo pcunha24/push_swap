@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 11:54:26 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 12:01:31 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 static void	init_stack(t_list **stack, int argc, char *argv[])
 {
-	int	i;
+	int	    i;
 	t_list	*new;
 	char	**str;
 
@@ -33,7 +45,7 @@ int	count_stack_size(t_list **stack)
 	i = 0;
 	if (*stack == NULL)
 		return (0);
-	if ((*stack) -> next == NULL)
+	if ((*stack)-> next == NULL)
 		return (1);
 	temp = *stack;
 	while (temp -> next != NULL)
@@ -62,7 +74,7 @@ static void	push_swap(t_list **stack_a, t_list **stack_b, int stack_size)
 	}
 }
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
@@ -74,11 +86,8 @@ int main (int argc, char *argv[])
 	stack_b = (t_list **)malloc(sizeof(t_list));
 	*stack_a = NULL;
 	*stack_b = NULL;
-
 	init_stack(stack_a, argc, argv);
 	stack_size = count_stack_size(stack_a);
-	
-
 	t_list *before_a = *stack_a;
 	t_list *before_b = *stack_b;
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 11:54:39 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 12:00:13 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	push_elements(t_list **stack_push, t_list **stack_pull)
@@ -8,9 +20,9 @@ void	push_elements(t_list **stack_push, t_list **stack_pull)
 	if (!*stack_pull)
 		return ;
 	temp_pull = (*stack_push);
-	temp_push = (*stack_pull) -> next;
+	temp_push = (*stack_pull)-> next;
 	ft_lstadd_front(stack_push, *stack_pull);
-	(*stack_push) -> next = temp_pull;
+	(*stack_push)-> next = temp_pull;
 	(*stack_pull) = temp_push;
 }
 

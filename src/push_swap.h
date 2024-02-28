@@ -1,12 +1,24 @@
-#include <stdio.h>
-#include <limits.h>
-#include <stdlib.h>
-#include <unistd.h> 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 13:47:05 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 13:48:56 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-typedef struct	push_swap 
+# include <stdio.h>
+# include <limits.h>
+# include <stdlib.h>
+# include <unistd.h> 
+
+typedef struct push_swap 
 {
 	int					content;
 	int					index;
@@ -38,6 +50,5 @@ void	insert_index(t_list	**stack, int size);
 int		is_sorted(t_list **stack);
 void	mini_sort(t_list **stack);
 void	radix_sort(t_list **stack_a, t_list **stack_b, int size);
-
 
 #endif

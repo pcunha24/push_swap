@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 11:54:48 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 13:54:41 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	reverse_rotate(t_list	**stack)
@@ -6,7 +18,7 @@ void	reverse_rotate(t_list	**stack)
 	t_list	*first;
 	t_list	*last;
 
-	if (*stack == NULL || (*stack) -> next == NULL)
+	if (*stack == NULL || (*stack)-> next == NULL)
 	{
 		return ;
 	}
@@ -18,7 +30,7 @@ void	reverse_rotate(t_list	**stack)
 	}
 	last = temp -> next;
 	*stack = last;
-	(*stack) -> next = first;
+	(*stack)-> next = first;
 	temp -> next = NULL;
 }
 

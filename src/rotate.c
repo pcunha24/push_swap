@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 11:54:53 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 13:50:13 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rotate(t_list	**stack)
@@ -5,7 +17,7 @@ void	rotate(t_list	**stack)
 	t_list	*tmp;
 	t_list	*last;
 
-	if (*stack == NULL || (*stack) -> next == NULL)
+	if (*stack == NULL || (*stack)-> next == NULL)
 	{
 		return ;
 	}
@@ -17,9 +29,8 @@ void	rotate(t_list	**stack)
 		last = tmp;
 	}
 	last -> next = *stack;
-	*stack = (*stack) -> next;
+	*stack = (*stack)-> next;
 	last -> next -> next = NULL;
-
 }
 
 void	ra(t_list	**stack_a)

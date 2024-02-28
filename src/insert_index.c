@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   insert_index.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 11:54:04 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 11:55:18 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_list	*get_next_min(t_list **stack, long last_min)
@@ -29,12 +41,11 @@ void	insert_index(t_list	**stack, int size)
 
 	curr_min = -2147483649;
 	i = 0;
-
 	while (i < size)
 	{
 		min_element = get_next_min(stack, curr_min);
 		min_element -> index = i;
 		curr_min = min_element -> content;
 		i++;
-	}	
+	}
 }

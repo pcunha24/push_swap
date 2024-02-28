@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mini_sort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/28 11:54:21 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 11:59:46 by pedalexa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	find_highest(t_list **stack)
@@ -24,6 +36,7 @@ static int	find_highest(t_list **stack)
 void	mini_sort(t_list	**stack)
 {
 	int	highest;
+
 	if ((is_sorted(stack)))
 		return ;
 	highest = find_highest(stack);
@@ -36,4 +49,3 @@ void	mini_sort(t_list	**stack)
 		return ;
 	sa(stack);
 }
-// find the highest value, if not on 3 reverse rotate or rotate to be in 3, then if not sorted do sa and it will be sorted!
