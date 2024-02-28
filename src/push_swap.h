@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:47:05 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/02/28 13:48:56 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/02/28 22:22:46 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h> 
 
-typedef struct push_swap 
+typedef struct push_swap
 {
 	int					content;
 	int					index;

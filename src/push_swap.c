@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:26 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/02/28 12:01:31 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/02/28 22:23:39 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 static void	init_stack(t_list **stack, int argc, char *argv[])
 {
-	int	    i;
+	int		i;
 	t_list	*new;
 	char	**str;
 
@@ -74,7 +74,7 @@ static void	push_swap(t_list **stack_a, t_list **stack_b, int stack_size)
 	}
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
@@ -88,48 +88,23 @@ int main(int argc, char *argv[])
 	*stack_b = NULL;
 	init_stack(stack_a, argc, argv);
 	stack_size = count_stack_size(stack_a);
-	t_list *before_a = *stack_a;
-	t_list *before_b = *stack_b;
-
-	printf("\nbefore a: ");
-	while (before_a)
-	{
-		printf("%d ", before_a -> content);
-		before_a = before_a -> next;
-	}
-
-	printf("\nbefore b: ");
-	while (before_b)
-	{
-		printf("%d ", before_b -> content);
-		before_b = before_b -> next;
-	}
-
-	// AFTER THE FUNCTION GETS CALLED
-
 	push_swap(stack_a, stack_b, stack_size);
+	return (0);
+}
 
-
-	t_list *after_a = *stack_a;
+/* t_list *after_a = *stack_a;
 	t_list *after_b = *stack_b;
 
-	printf("\nafter a: ");
+	printf("a: ");
 	while (after_a)
 	{
 		printf("%d ", after_a -> content);
 		after_a = after_a -> next;
 	}
 
-	printf("\nafter b: ");
+	printf("b: ");
 	while (after_b)
 	{
 		printf("%d ", after_b -> content);
 		after_b = after_b -> next;
-	}
-
-	if (is_sorted(stack_a))
-		write(1, "sorted\n", 7);
-	else
-		write(1, "not sorted\n", 11);
-	return (0);
-}
+	} */
