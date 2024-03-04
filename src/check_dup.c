@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   check_dup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/28 11:54:16 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/04 15:37:42 by pedalexa         ###   ########.fr       */
+/*   Created: 2024/02/28 22:53:33 by pedalexa          #+#    #+#             */
+/*   Updated: 2024/02/28 22:53:38 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_list	**stack)
+int	check_dup(t_list **stack)
 {
 	t_list	*temp;
-	t_list	*temp_next;
+	t_list	*temp2;
 
-	if (*stack == NULL || (*stack)-> next == NULL)
-		return (0);
 	temp = *stack;
-	temp_next = temp -> next;
-	while (temp_next)
+	while (temp)
 	{
-		if (temp_next -> content > temp -> content)
+		temp2 = temp -> next;
+		while (temp2)
 		{
-			temp = temp -> next;
-			temp_next = temp_next -> next;
+			if (temp -> content == temp2 -> content)
+				return (0);
+			temp2 = temp2 -> next;
 		}
-		else if (temp_next -> content == temp -> content)
-		{
-			write(2, "Error\n", 6);
-			exit (1);
-		}
-		else
-			return (0);
+		temp = temp -> next;
 	}
 	return (1);
 }

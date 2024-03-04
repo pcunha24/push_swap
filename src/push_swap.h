@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:47:05 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/02/28 22:22:46 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:17:58 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,11 @@ void	insert_index(t_list	**stack, int size);
 int		is_sorted(t_list **stack);
 void	mini_sort(t_list **stack);
 void	radix_sort(t_list **stack_a, t_list **stack_b, int size);
+int		check_dup(t_list **stack);
+void	free_stack(t_list **stack);
+int		check_if_num(char **str, int i);
+void	free_string_array(char **str);
+void	init_stack_args(t_list **stack_a, t_list **stack_b, char *argv[]);
+void	init_stack_arg2(t_list **stack_a, t_list **stack_b, char *argv[]);
 
 #endif
