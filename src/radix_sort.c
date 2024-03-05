@@ -6,18 +6,18 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:43 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/04 15:44:05 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:50:22 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-unsigned int	get_max_bits(t_list **stack)
+/* unsigned int	get_max_bits(t_list **stack)
 {
 	t_list			*temp;
 	unsigned int	bits;
 	int				max_index;
-	
+
 	temp = *stack;
 	bits = 0;
 	max_index = 0;
@@ -31,8 +31,7 @@ unsigned int	get_max_bits(t_list **stack)
 		bits++;
 	return (bits);
 }
-
-
+ */
 /* void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	unsigned int	i;
@@ -68,12 +67,10 @@ void	radix_sort(t_list **stack_a, t_list **stack_b, int size)
 {
 	unsigned int	i;
 	unsigned int	bit;
-	unsigned int	max_bit;
 	t_list			*temp;
 
 	bit = 0;
-	max_bit = get_max_bits(stack_a);
-	while (bit < max_bit)
+	while (bit < 32)
 	{
 		if (is_sorted(stack_a) && ft_lstsize(*stack_b) == 0)
 			return ;
@@ -94,7 +91,6 @@ void	radix_sort(t_list **stack_a, t_list **stack_b, int size)
 		bit++;
 	}
 }
-
 
 /* int	is_bits_left(t_list **stack_a, unsigned int bit)
 {
