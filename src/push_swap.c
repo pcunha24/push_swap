@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:26 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/05 01:57:25 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:00:39 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	count_stack_size(t_list **stack)
 static void	free_stacks(t_list **stack_a, t_list **stack_b)
 {
 	free_stack(stack_a);
-	free_stack(stack_a);
+	free_stack(stack_b);
 }
 
 static void	push_swap(t_list **stack_a, t_list **stack_b, int stack_size)
@@ -77,7 +77,7 @@ int	main(int argc, char *argv[])
 	}
 	stack_size = count_stack_size(stack_a);
 	push_swap(stack_a, stack_b, stack_size);
-	free_stacks(stack_a, stack_a);
+	free_stacks(stack_a, stack_b);
 	return (0);
 }
 
