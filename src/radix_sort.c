@@ -6,13 +6,13 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:43 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/04 15:50:22 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/07 13:26:22 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* unsigned int	get_max_bits(t_list **stack)
+unsigned int	get_max_bits(t_list **stack)
 {
 	t_list			*temp;
 	unsigned int	bits;
@@ -31,8 +31,8 @@
 		bits++;
 	return (bits);
 }
- */
-/* void	radix_sort(t_list **stack_a, t_list **stack_b)
+
+void	radix_sort(t_list **stack_a, t_list **stack_b)
 {
 	unsigned int	i;
 	int				j;
@@ -61,36 +61,36 @@
 	}
 	if (is_sorted(stack_a) && ft_lstsize(*stack_b) == 0)
 		return ;
-} */
-
-void	radix_sort(t_list **stack_a, t_list **stack_b, int size)
-{
-	unsigned int	i;
-	unsigned int	bit;
-	t_list			*temp;
-
-	bit = 0;
-	while (bit < 32)
-	{
-		if (is_sorted(stack_a) && ft_lstsize(*stack_b) == 0)
-			return ;
-		i = 0;
-		temp = *stack_a;
-		while (i < (unsigned int)size)
-		{
-			if ((1 & (temp -> index >> bit)) == 0)
-				pb(stack_a, stack_b);
-			else
-				ra(stack_a);
-			temp = *stack_a;
-			i++;
-		}
-		temp = *stack_b;
-		while (*stack_b)
-			pa(stack_a, stack_b);
-		bit++;
-	}
 }
+
+// void	radix_sort(t_list **stack_a, t_list **stack_b, int size)
+// {
+// 	unsigned int	i;
+// 	unsigned int	bit;
+// 	t_list			*temp;
+
+// 	bit = 0;
+// 	while (bit < 32)
+// 	{
+// 		if (is_sorted(stack_a) && ft_lstsize(*stack_b) == 0)
+// 			return ;
+// 		i = 0;
+// 		temp = *stack_a;
+// 		while (i < (unsigned int)size)
+// 		{
+// 			if ((1 & (temp -> index >> bit)) == 0)
+// 				pb(stack_a, stack_b);
+// 			else
+// 				ra(stack_a);
+// 			temp = *stack_a;
+// 			i++;
+// 		}
+// 		temp = *stack_b;
+// 		while (*stack_b)
+// 			pa(stack_a, stack_b);
+// 		bit++;
+// 	}
+// }
 
 /* int	is_bits_left(t_list **stack_a, unsigned int bit)
 {
