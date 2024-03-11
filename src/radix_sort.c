@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:43 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/11 00:45:53 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/11 01:28:46 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,37 +32,6 @@ unsigned int	get_max_bits(t_list **stack)
 	return (bits);
 }
 
-/* void	radix_sort(t_list **stack_a, t_list **stack_b)
-{
-	unsigned int	i;
-	int				j;
-	int				size;
-	unsigned int	max_bits;
-	size = ft_lstsize(*stack_a);
-	t_list			*temp;
-	
-	i = 0;
-	temp = *stack_a;
-	max_bits = get_max_bits(stack_a);
-	while (i < max_bits)
-	{
-		j = 0;
-		while(j++ < size)
-		{
-			temp = *stack_a;
-			if (((temp -> index >> i) & 1) == 1)
-				ra(stack_a);
-			else
-				pb(stack_a, stack_a);
-		}
-		while (ft_lstsize(*stack_b) != 0)
-			pa(stack_a, stack_a);
-		i++;
-	}
-	if (is_sorted(stack_a) && ft_lstsize(*stack_b) == 0)
-		return ;
-}
- */
 void	radix_sort(t_list **stack_a, t_list **stack_b, int size)
 {
 	unsigned int	i;

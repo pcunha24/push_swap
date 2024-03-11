@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:26 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/11 00:52:45 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/11 01:28:10 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,20 +84,3 @@ int	main(int argc, char *argv[])
 	free_stacks(stack_a, stack_b);
 	return (0);
 }
-
-/* t_list *after_a = *stack_a;
-	t_list *after_b = *stack_b;
-
-	printf("a: ");
-	while (after_a)
-	{
-		printf("%d ", after_a -> content);
-		after_a = after_a -> next;
-	}
-
-	printf("b: ");
-	while (after_b)
-	{
-		printf("%d ", after_b -> content);
-		after_b = after_b -> next;
-	} */
