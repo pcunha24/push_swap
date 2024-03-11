@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:47:05 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/07 12:06:18 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/11 00:44:24 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@
 
 typedef struct push_swap
 {
-	int					content;
+	long				content;
 	int					index;
 	struct push_swap	*next;
 }						t_list;
 
-t_list	*ft_lstnew(int content);
+t_list	*ft_lstnew(long content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 char	**ft_split(char const *s, char c);
 void	swap_elements(t_list **stack);
 void	sa(t_list **stack_a);
@@ -49,12 +49,14 @@ void	rrr(t_list	**stack_a, t_list	**stack_b);
 void	insert_index(t_list	**stack, int size);
 int		is_sorted(t_list **stack);
 void	mini_sort(t_list **stack);
-void	radix_sort(t_list **stack_a, t_list **stack_b);
+void	radix_sort(t_list **stack_a, t_list **stack_b, int size);
 int		check_dup(t_list **stack);
 void	free_stack(t_list **stack);
 int		check_if_num(char **str, int i);
 void	free_string_array(char **str);
 void	init_stack_args(t_list **stack_a, t_list **stack_b, char *argv[]);
 void	init_stack_arg2(t_list **stack_a, t_list **stack_b, char *argv[]);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
 
 #endif

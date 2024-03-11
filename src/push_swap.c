@@ -6,30 +6,24 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:26 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/07 13:24:58 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/11 00:52:45 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	count_stack_size(t_list **stack)
+static int	check_max_min(t_list **stack)
 {
 	t_list	*temp;
-	int		i;
 
-	i = 0;
-	if (*stack == NULL)
-		return (0);
-	if ((*stack)-> next == NULL)
-		return (1);
 	temp = *stack;
-	while (temp -> next != NULL)
+	while (temp)
 	{
-		i++;
+		if (temp -> content > 2147483647 || temp -> content < -2147483648)
+			return (0);
 		temp = temp -> next;
 	}
-	i++;
-	return (i);
+	return (1);
 }
 
 static void	free_stacks(t_list **stack_a, t_list **stack_b)
@@ -46,10 +40,20 @@ static void	push_swap(t_list **stack_a, t_list **stack_b, int stack_size)
 		ra(stack_a);
 	else if (stack_size == 3 && !is_sorted(stack_a))
 		mini_sort(stack_a);
+	else if (stack_size == 4 && !is_sorted(stack_a))
+	{
+		insert_index(stack_a, stack_size);
+		sort_four(stack_a, stack_b);
+	}
+	else if (stack_size == 5 && !is_sorted(stack_a))
+	{
+		insert_index(stack_a, stack_size);
+		sort_five(stack_a, stack_b);
+	}
 	else
 	{
 		insert_index(stack_a, stack_size);
-		radix_sort(stack_a, stack_b);
+		radix_sort(stack_a, stack_b, stack_size);
 	}
 }
 
@@ -69,30 +73,14 @@ int	main(int argc, char *argv[])
 		init_stack_arg2(stack_a, stack_b, argv);
 	else
 		init_stack_args(stack_a, stack_b, argv);
-	if (!check_dup(stack_a))
+	if (!check_dup(stack_a) || !check_max_min(stack_a))
 	{
 		free_stacks(stack_a, stack_b);
 		write(2, "Error\n", 6);
 		exit(-1);
 	}
-	stack_size = count_stack_size(stack_a);
+	stack_size = ft_lstsize(*stack_a);
 	push_swap(stack_a, stack_b, stack_size);
-    t_list *after_a = *stack_a;
-	t_list *after_b = *stack_b;
-
-	printf("a: ");
-	while (after_a)
-	{
-		printf("%d ", after_a -> content);
-		after_a = after_a -> next;
-	}
-
-	printf("b: ");
-	while (after_b)
-	{
-		printf("%d ", after_b -> content);
-		after_b = after_b -> next;
-	}
 	free_stacks(stack_a, stack_b);
 	return (0);
 }

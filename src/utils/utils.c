@@ -6,13 +6,13 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:26 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/02 18:20:24 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/10 23:49:20 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-t_list	*ft_lstnew(int content)
+t_list	*ft_lstnew(long content)
 {
 	t_list	*new;
 
@@ -41,11 +41,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	temp -> next = new;
 }
 
-int	ft_atoi(const char *str)
+long	ft_atol(const char *str)
 {
-	int	i;
-	int	minus;
-	int	nb;
+	int		i;
+	int		minus;
+	long	nb;
 
 	i = 0;
 	minus = 1;

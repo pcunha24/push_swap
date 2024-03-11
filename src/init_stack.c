@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:11:50 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/04 15:33:41 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/10 23:49:02 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	init_stack_args(t_list **stack_a, t_list **stack_b, char *argv[])
 	}
 	while (str[i])
 	{
-		new = ft_lstnew(ft_atoi(str[i]));
+		new = ft_lstnew(ft_atol(str[i]));
 		ft_lstadd_back(stack_a, new);
 		i++;
 	}
@@ -53,7 +53,7 @@ void	init_stack_arg2(t_list **stack_a, t_list **stack_b, char *argv[])
 	}
 	while (str[i])
 	{
-		new = ft_lstnew(ft_atoi(str[i]));
+		new = ft_lstnew(ft_atol(str[i]));
 		ft_lstadd_back(stack_a, new);
 		i++;
 	}

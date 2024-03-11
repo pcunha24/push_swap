@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 11:54:21 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/02/28 11:59:46 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/10 23:34:58 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	mini_sort(t_list	**stack)
 	if ((is_sorted(stack)))
 		return ;
 	highest = find_highest(stack);
-	printf("highest is %d\n", highest);
 	if (highest == 1)
 		ra(stack);
 	else if (highest == 2)
