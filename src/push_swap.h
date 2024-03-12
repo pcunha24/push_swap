@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:47:05 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/11 00:44:24 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:11:47 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void	init_stack_args(t_list **stack_a, t_list **stack_b, char *argv[]);
 void	init_stack_arg2(t_list **stack_a, t_list **stack_b, char *argv[]);
 void	sort_four(t_list **stack_a, t_list **stack_b);
 void	sort_five(t_list **stack_a, t_list **stack_b);
+int		is_more_nums(char **str);
 
 #endif

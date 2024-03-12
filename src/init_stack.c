@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:11:50 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/11 02:43:31 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:01:34 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_stack_args(t_list **stack_a, t_list **stack_b, char *argv[])
 
 	i = 1;
 	str = argv;
-	if (!check_if_num(str, 1))
+	if (!check_if_num(str, 1) || !is_more_nums(str))
 	{
 		free_stack(stack_a);
 		free_stack(stack_b);

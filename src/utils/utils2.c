@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:11:58 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/11 02:56:42 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:12:27 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,32 @@ int	check_if_num(char **str, int i)
 		if (num_found == 0)
 			return (0);
 		i++;
+	}
+	return (1);
+}
+
+int	is_more_nums(char **str)
+{
+	int	i;
+	int	h;
+
+	h = 0;
+	while (str[h])
+	{
+		i = 0;
+		while (str[h][i] && (str[h][i] < '1' || str[h][i] > '9'))
+			i++;
+		while (str[h][i] && str[h][i] >= '1' && str[h][i] <= '9')
+		{
+			i++;
+		}
+		while (str[h][i])
+		{
+			if (str[h][i] != '\0' && str[h][i] != 32)
+				return (0);
+			i++;
+		}
+		h++;
 	}
 	return (1);
 }
