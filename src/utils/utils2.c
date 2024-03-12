@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:11:58 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/04 15:44:57 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/11 02:56:42 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	check_if_num(char **str, int i)
 				&& str[i][h] <= '9') || str[i][h] == '-' || str[i][h] == '+')
 			{
 				if (str[i][h] >= '0' && str[i][h] <= '9')
-					num_found = 1;
+					num_found++;
 				if ((str[i][h] == '-' || str[i][h] == '+') && num_found == 1)
 					return (0);
 				h++;
@@ -57,6 +57,8 @@ int	check_if_num(char **str, int i)
 			else
 				return (0);
 		}
+		if (num_found == 0)
+			return (0);
 		i++;
 	}
 	return (1);
