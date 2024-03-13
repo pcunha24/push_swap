@@ -6,7 +6,7 @@
 /*   By: pedalexa <pedalexa@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 14:11:58 by pedalexa          #+#    #+#             */
-/*   Updated: 2024/03/12 15:12:27 by pedalexa         ###   ########.fr       */
+/*   Updated: 2024/03/13 20:35:46 by pedalexa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,24 @@ void	free_stack(t_list **stack)
 int	check_if_num(char **str, int i)
 {
 	int	h;
-	int	num_found;
 
 	while (str[i])
 	{
 		h = 0;
-		num_found = 0;
-		while (str[i][h])
+		while (str[i][h] == 32)
+			h++;
+		if (str[i][h] == '+' || str[i][h] == '-')
+			h++;
+		if (str[i][h] >= '0' && str[i][h] <= '9')
 		{
-			if ((str[i][h] >= 9 && str[i][h] < 13) ||
-				str[i][h] == 32 || (str[i][h] >= '0'
-				&& str[i][h] <= '9') || str[i][h] == '-' || str[i][h] == '+')
-			{
-				if (str[i][h] >= '0' && str[i][h] <= '9')
-					num_found++;
-				if ((str[i][h] == '-' || str[i][h] == '+') && num_found == 1)
-					return (0);
+			while (str[i][h] >= '0' && str[i][h] <= '9')
 				h++;
-			}
-			else
+			while (str[i][h] && str[i][h] == 32)
+				h++;
+			if (str[i][h] && str[i][h] != 32)
 				return (0);
 		}
-		if (num_found == 0)
+		else
 			return (0);
 		i++;
 	}
